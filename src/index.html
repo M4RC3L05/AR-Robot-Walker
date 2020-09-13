@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./index.ts"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+</head>
+
+<body style='margin : 0px; overflow: hidden;'>
+    <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
+        arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;" stats>
+        <a-assets>
+            <a-asset-item id="tree" src="./models/robot/scene.gltf"></a-asset-item>
+        </a-assets>
+        <a-marker preset='hiro'>
+            <a-entity joystick animation-mixer gltf-model="#tree" scale="0.3 0.3 0.3"></a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+
+</html>
